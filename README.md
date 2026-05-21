@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 프로젝트 개요
+## 프로젝트 개요
 
 스마트폰과 카메라 QA 과정에서 발생하는 수만 장의 사진을 자동으로 선별하는 **3-Stage 파이프라인**입니다.
 
@@ -18,7 +18,7 @@
 
 ---
 
-## 📂 Repository 구조
+## Repository 구조
 
 ```
 shot-failure-detection/
@@ -40,7 +40,7 @@ shot-failure-detection/
 
 ---
 
-## 🗂️ 데이터셋
+## 데이터셋
 
 **KonIQ-10k** (Lin et al., 2020)
 
@@ -48,7 +48,7 @@ shot-failure-detection/
 - 레이블: MOS_zscore (0~100, 크라우드소싱 품질 점수)
 - 공식 분할: Train 7,058 / Val 1,000 / Test 2,015
 
-📥 **다운로드**: [KonIQ-10k 공식 페이지](http://database.mmsp-kn.de/koniq-10k-database.html)
+**다운로드**: [KonIQ-10k 공식 페이지](http://database.mmsp-kn.de/koniq-10k-database.html)
 
 다운로드 후 아래 구조로 배치하세요:
 
@@ -62,7 +62,7 @@ shot-failure-detection/
 
 ---
 
-## ⚙️ 환경 설정
+## 환경 설정
 
 ### 1. Python 버전
 ```bash
@@ -81,7 +81,7 @@ brew install libomp
 
 ---
 
-## 🚀 재현 방법 (순서대로 실행)
+## 재현 방법 (순서대로 실행)
 
 ### Step 1. Feature 추출
 ```bash
@@ -104,7 +104,7 @@ python src/tune_hyperparams.py \
 ```
 > 소요 시간: 약 10~15분 | 출력: `tuning_results/best_params.json`
 >
-> 💡 건너뛰어도 됩니다. 기본값이 코드에 내장되어 있습니다.
+> 건너뛰어도 됩니다. 기본값이 코드에 내장되어 있습니다.
 
 ---
 
@@ -152,7 +152,7 @@ python src/validate_models.py \
 
 ---
 
-### 🔍 개인 사진 분석 (보너스)
+### 개인 사진 분석 (보너스)
 ```bash
 # my_test_data/ 폴더에 사진을 넣고 실행
 python src/analyze_my_photos.py \
@@ -163,7 +163,7 @@ python src/analyze_my_photos.py \
 
 ---
 
-## 📊 주요 실험 결과
+## 주요 실험 결과
 
 | 모델 | Accuracy | F1 | AUC-ROC | Precision | Recall |
 |---|---|---|---|---|---|
@@ -175,7 +175,7 @@ python src/analyze_my_photos.py \
 
 ---
 
-## 🛠️ 개발 환경
+## 개발 환경
 
 | 항목 | 내용 |
 |---|---|
@@ -183,23 +183,3 @@ python src/analyze_my_photos.py \
 | Python | 3.10 |
 | 주요 라이브러리 | XGBoost 1.7.6, scikit-learn 1.3, OpenCV 4.8, SHAP 0.43 |
 | 하드웨어 | CPU only (GPU 불필요) |
-
----
-
-## 📚 References
-
-1. Hosu, V., Lin, H., Sziranyi, T., & Saupe, D. (2020). KonIQ-10k: An ecologically valid database for deep learning of blind image quality assessment. IEEE Transactions on Image Processing, 29, 4041–4056.
-2. Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. *KDD 2016*.
-3. Lundberg, S. M., & Lee, S. I. (2017). A unified approach to interpreting model predictions. *NeurIPS 2017*.
-4. Hasler, D., & Süsstrunk, S. (2003). Measuring colorfulness in natural images. *SPIE 2003*.
-5. Pech-Pacheco, J. L., et al. (2000). Diatom autofocusing in brightfield microscopy. *ICPR 2000*.
-6. Otsu, N. (1979). A threshold selection method from gray-level histograms. *IEEE TSMC*, 9(1), 62–66.
-7. Akiba, T., Sano, S., Yanase, T., Ohta, T., & Koyama, M. (2019).Optuna: A next-generation hyperparameter optimization framework. Proceedings of KDD 2019, 2623–2631.
-8. Breiman, L. (2001). Random forests. Machine Learning, 45, 5–32.
-9. Cortes, C., & Vapnik, V. (1995). Support-vector networks. Machine Learning, 20(3), 273–297.
----
-
-## 📝 AI 사용 고지
-
-본 프로젝트는 코드 구현 목적으로 Claude (Anthropic)를 활용하였습니다.
-모든 코드와 결과는 직접 검토·실행하였으며, 프로젝트 방향 및 핵심 아이디어는 저자가 직접 수립하였습니다.
